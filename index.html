@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./images/Logomark.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VooDoo Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- shopping cart drawer is the root container-->
+    <div class="drawer drawer-end">
+      <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content">
+        <!-- Page content here -->
+        <!-- header -->
+        <header class="header">
+          <div class="main-container">
+            <div class="navbar">
+              <div class="containerWrap flex justify-between items-start">
+                <div class="flex header-icons-wrap">
+                  <svg class="icon icon-voodoo-logo" width="23" height="23">
+                    <use href="./src/images/sprite.svg#icon-logomark"></use>
+                  </svg>
+
+                  <svg class="icon icon-voodoo-text" width="108" height="50">
+                    <use href="./src/images/sprite.svg#icon-vooDoo-test"></use>
+                  </svg>
+                </div>
+                <div class="flex nav-btn-wrap">
+                  <div>
+                    <label
+                      for="my-drawer-4"
+                      tabindex="0"
+                      class="btn btn-ghost btn-circle"
+                    >
+                      <div class="indicator">
+                        <svg class="icon" width="24" height="24">
+                          <use
+                            href="./src/images/sprite.svg#icon-shopping-cart"
+                          ></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="dropdown dropdown-end">
+                    <label
+                      tabindex="0"
+                      class="btn bg-slate-950 hover:bg-slate-700 normal-case"
+                    >
+                      <div class="signup-btn w-20 rounded-full text-white">
+                        Sign-up
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- main content -->
+        <main>
+          <div class="main-container containerWrap pt-24">
+            <div
+              tabindex="0"
+              class="collapse collapse-arrow border border-r-4 bg-black"
+            >
+              <div
+                class="collapse-title text-sm font-medium text-white flex items-center"
+              >
+                <div class="flex items-center gap-1.5">
+                  <svg class="icon" width="45" height="45">
+                    <use href="./src/images/sprite.svg#icon-alert-circle"></use>
+                  </svg>
+
+                  <p class="alpha-text">Alpha</p>
+                </div>
+                <p>Important info regarding our service</p>
+              </div>
+              <div class="collapse-content text-white">
+                <p>
+                  Voodoo Ecom has been helping Ukrainians launch online
+                  businesses from scratch and increase income for already active
+                  online entrepreneurs for the past four years. We will help you
+                  too!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="main-container containerWrap py-12">
+            <div class="products-list"></div>
+          </div>
+
+          <div class="main-container paginator-wrap">
+            <div
+              class="flex justify-center tui-pagination"
+              id="pagination"
+            ></div>
+          </div>
+        </main>
+        <!-- footer -->
+        <footer class="footer bg-white text-black">
+          <aside>
+            <svg class="icon footer-logo" width="82" height="82">
+              <use href="./src/images/sprite.svg#icon-logomark"></use>
+            </svg>
+          </aside>
+          <nav>
+            <a class="link link-hover footer-link">Faq</a>
+            <a class="link link-hover footer-link">Returns</a>
+            <a class="link link-hover footer-link">Contact</a>
+          </nav>
+          <nav>
+            <a class="link link-hover footer-link">Terms & Conditions</a>
+            <a class="link link-hover footer-link">Privacy policy</a>
+            <a class="link link-hover footer-link">Cookie policy</a>
+            <a class="link link-hover footer-link">Cookie settings</a>
+          </nav>
+          <nav>
+            <a class="link link-hover footer-link">About second chance</a>
+            <a class="link link-hover footer-link">Career</a>
+            <a class="link link-hover footer-link">Facebook</a>
+            <a class="link link-hover footer-link">Instagram</a>
+          </nav>
+        </footer>
+      </div>
+      <div class="drawer-side">
+        <label for="my-drawer-4" class="drawer-overlay"></label>
+        <div class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+          <!-- Sidebar content here -->
+          <div class="cart-header-wrap flex justify-between items-center">
+            <h2 class="cart-title">Shopping Cart</h2>
+            <button
+              class="cart-btn-close inline-flex justify-center items-center"
+            >
+              <svg class="icon" width="24" height="24">
+                <use href="./src/images/sprite.svg#icon-close-line"></use>
+              </svg>
+            </button>
+          </div>
+          <ul class="cart-list"></ul>
+          <div class="cart-total-wrap">
+            <p class="cart-total-text">Total</p>
+            <p class="cart-total"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
