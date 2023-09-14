@@ -1,4 +1,5 @@
 import axios from "axios";
+import Notiflix from "notiflix";
 
 axios.defaults.baseURL = "https://voodoo-sandbox.myshopify.com";
 
@@ -15,7 +16,9 @@ export const getAllProducts = async (page) => {
     const products = res.data.products;
     return products;
   } catch (error) {
-    console.log(error);
+    return Notiflix.Notify.failure(
+      "Oops! Something went wrong, please try again later."
+    );
   }
 };
 

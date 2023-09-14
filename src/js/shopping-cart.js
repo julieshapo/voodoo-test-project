@@ -1,5 +1,6 @@
 import { getAllProducts } from "./api-fetch";
 import { DEFAULT_IMG, REMOVE_BTN_SVG } from "./constants";
+import Notiflix from "notiflix";
 
 const cartDrawer = document.getElementById("my-drawer-4");
 const cartList = document.querySelector(".cart-list");
@@ -123,9 +124,15 @@ export const onCartBtnClick = async (e) => {
 
       shoppingCartMarkup(shoppingCart);
       saveToLocalStorage();
+
+      return Notiflix.Notify.success(
+        "The product has been added to the Shopping cart!"
+      );
     }
   } catch (error) {
-    console.error("Error adding to cart:", error);
+    return Notiflix.Notify.failure(
+      "Oops! Something went wrong, please try again later."
+    );
   }
 };
 
@@ -138,6 +145,10 @@ const removeFromShoppingCart = (productId) => {
 
     shoppingCartMarkup(shoppingCart);
     saveToLocalStorage();
+
+    return Notiflix.Notify.info(
+      "The product has been removed from the Shopping cart!"
+    );
   }
 };
 
