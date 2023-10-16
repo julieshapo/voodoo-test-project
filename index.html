@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Space+Mono:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -49,14 +49,10 @@
                     </label>
                   </div>
                   <div class="dropdown dropdown-end">
-                    <label
-                      tabindex="0"
-                      class="btn bg-slate-950 hover:bg-slate-700 normal-case"
+                    <a
+                      class="btn bg-slate-950 hover:bg-slate-700 normal-case signup-btn p-3 rounded text-white"
+                      >Sign-up</a
                     >
-                      <div class="signup-btn w-20 rounded-full text-white">
-                        Sign-up
-                      </div>
-                    </label>
                   </div>
                 </div>
               </div>
@@ -65,25 +61,23 @@
         </header>
         <!-- main content -->
         <main>
-          <div class="main-container containerWrap pt-24">
+          <div class="main-container containerWrap">
             <div
               tabindex="0"
-              class="collapse collapse-arrow border border-r-4 bg-black"
+              class="collapse collapse-arrow border rounded bg-black"
             >
-              <div
-                class="collapse-title text-sm font-medium text-white flex items-center"
-              >
+              <div class="collapse-title text-sm font-medium flex items-center">
                 <div class="flex items-center gap-1.5">
-                  <svg class="icon" width="45" height="45">
+                  <svg class="icon" width="24" height="24">
                     <use href="./src/images/sprite.svg#icon-alert-circle"></use>
                   </svg>
 
                   <p class="alpha-text">Alpha</p>
                 </div>
-                <p>Important info regarding our service</p>
+                <p class="showed-text">Important info regarding our service</p>
               </div>
-              <div class="collapse-content text-white">
-                <p>
+              <div class="collapse-content px-6">
+                <p tabindex="0">
                   Voodoo Ecom has been helping Ukrainians launch online
                   businesses from scratch and increase income for already active
                   online entrepreneurs for the past four years. We will help you
@@ -93,7 +87,7 @@
             </div>
           </div>
 
-          <div class="main-container containerWrap py-12">
+          <div class="main-container containerWrap products-container">
             <div class="products-list"></div>
           </div>
 

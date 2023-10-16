@@ -48,12 +48,6 @@ button:focus {
   box-shadow: 2px 2px 12px 0px #0000007e;
 }
 
-.btn:hover,
-.btn:focus {
-  box-shadow: 2px 2px 12px 0px #0000007e;
-  color: #000;
-}
-
 h1,
 h2,
 h3,
@@ -88,10 +82,6 @@ ol {
   }
 }
 
-.containerWrap {
-  padding-top: 24px;
-}
-
 /* HEADER */
 
 .header {
@@ -99,10 +89,12 @@ ol {
   padding-top: 24px;
   padding-bottom: 24px;
   border-bottom: 1px solid #000;
+  margin-bottom: 24px;
 
   @media screen and (min-width: 1512px) {
     padding-top: 48px;
     padding-bottom: 48px;
+    margin-bottom: 100px;
   }
 }
 
@@ -142,32 +134,68 @@ ol {
 
 .signup-btn {
   text-align: center;
-  font-size: 20px;
   font-weight: 700;
 
   color: #fff;
+
+  @media screen and (min-width: 1512px) {
+    font-size: 20px;
+  }
 }
 
 /* MAIN CONTENT */
 
+.collapse-arrow > .collapse-title:after {
+  width: 10px;
+  height: 10px;
+  right: 8.5%;
+
+  @media screen and (min-width: 1512px) {
+    right: 2.2%;
+  }
+}
+
 .collapse-title {
   gap: 24px;
+  padding: 24px;
+
+  color: #fcf7e6;
 
   @media screen and (min-width: 1512px) {
     gap: 48px;
   }
 }
 
+.showed-text {
+  width: 142px;
+  height: 24px;
+  padding-top: 2px;
+  overflow: hidden;
+}
+
+.collapse-content {
+  color: #fcf7e6;
+}
+
 .alpha-text {
   text-align: center;
-  font-family: sans-serif;
   text-transform: uppercase;
   font-size: 16px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
 
   color: #fcf7e6;
+}
+
+/* PRODUCT CARDS */
+
+.products-container {
+  padding-top: 50px;
+  padding-bottom: 59px;
+
+  @media screen and (min-width: 1512px) {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
 }
 
 .products-list {
@@ -178,28 +206,69 @@ ol {
 
   @media screen and (min-width: 1512px) {
     justify-content: space-between;
-    gap: 24px;
+    column-gap: 24px;
+    row-gap: 48px;
     flex-basis: calc((100% - 24px) / 4);
   }
 }
 
 .product-card {
-  width: 300px;
+  width: 342px;
+
+  @media screen and (min-width: 1512px) {
+    width: 300px;
+  }
+}
+
+.product-img {
+  height: 300px;
+  width: 100%;
+}
+
+.badge {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: calc(15.31 / 12);
+
+  color: #fcf7e6;
+  border-color: transparent;
 }
 
 .card-compact .card-body {
   padding: 0;
+  margin: 0;
+  gap: 0;
+}
+
+.card-description-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 0;
+  font-size: 14px;
 }
 
 .card-text-wrap {
-  padding: 12px 0;
-  font-size: 14px;
   font-weight: 700;
 }
 
 .card-compact .card-title {
   font-size: 14px;
   text-transform: capitalize;
+  margin: 0;
+}
+
+.card-condition-wrap {
+  text-align: right;
+}
+
+.card-condition {
+  font-weight: 500;
 }
 
 /* PAGINATION */

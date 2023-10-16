@@ -45,7 +45,7 @@ const shoppingCartMarkup = (shoppingCart) => {
           <p class="cart-price">${item.price} KR.</p>
           <div class="cart-quantity">
             <button class="cart-decrement-btn">-</button>
-            <span>${item.quantity}</span>
+            <p>${item.quantity}</p>
             <button class="cart-increment-btn">+</button>
           </div>
         </div>
