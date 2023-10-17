@@ -6,12 +6,19 @@
   @apply container mx-auto;
 }
 
-/* COMMON & RESET */
+/* ----------  COMMON, RESET & COLOR VARIABLES ----------  */
 
 :root {
   font-family: "Space Grotesk", sans-serif;
   line-height: 1.5;
   font-weight: 400;
+
+  --color-main-light: #fcf7e6;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-pagination: #1e1e1e;
+  --color-drawer: #1e1e1e;
+  --color-hover-shadow: #0000007e;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -19,33 +26,28 @@
 }
 
 body {
-  background-color: #fcf7e6;
+  background-color: var(--color-main-light);
 }
 
 a {
   font-weight: 500;
   text-decoration: inherit;
 
-  color: black;
+  color: var(--color-black);
 }
 
 a:hover {
-  box-shadow: 2px 2px 12px 0px #0000007e;
+  box-shadow: 2px 2px 12px 0px var(--color-hover-shadow);
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  font-size: 1em;
-  font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: box-shadow 250ms linear;
 }
 
-button:hover,
-button:focus {
-  box-shadow: 2px 2px 12px 0px #0000007e;
+button:hover {
+  box-shadow: 2px 2px 12px 0px var(--color-hover-shadow);
 }
 
 h1,
@@ -69,7 +71,7 @@ ol {
   stroke-width: 0;
 }
 
-/* CONTAINERS */
+/* ----------  CONTAINERS ----------  */
 
 .main-container {
   margin: 0 auto;
@@ -82,13 +84,13 @@ ol {
   }
 }
 
-/* HEADER */
+/* ---------- HEADER ---------- */
 
 .header {
-  background-color: #fcf7e6;
+  background-color: var(--color-main-light);
   padding-top: 24px;
   padding-bottom: 24px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid var(--color-black);
   margin-bottom: 24px;
 
   @media screen and (min-width: 1512px) {
@@ -135,31 +137,32 @@ ol {
 .signup-btn {
   text-align: center;
   font-weight: 700;
+  border: 1px solid transparent;
 
-  color: #fff;
+  height: auto;
+  min-height: 0;
+  padding: 12px;
+
+  color: var(--color-white);
 
   @media screen and (min-width: 1512px) {
     font-size: 20px;
   }
 }
 
-/* MAIN CONTENT */
+/* ---------- MAIN CONTENT ----------  */
 
 .collapse-arrow > .collapse-title:after {
   width: 10px;
   height: 10px;
-  right: 8.5%;
-
-  @media screen and (min-width: 1512px) {
-    right: 2.2%;
-  }
+  right: 24px;
 }
 
 .collapse-title {
   gap: 24px;
   padding: 24px;
 
-  color: #fcf7e6;
+  color: var(--color-main-light);
 
   @media screen and (min-width: 1512px) {
     gap: 48px;
@@ -174,7 +177,7 @@ ol {
 }
 
 .collapse-content {
-  color: #fcf7e6;
+  color: var(--color-main-light);
 }
 
 .alpha-text {
@@ -183,10 +186,14 @@ ol {
   font-size: 16px;
   font-weight: 700;
 
-  color: #fcf7e6;
+  color: var(--color-main-light);
 }
 
-/* PRODUCT CARDS */
+.hidden-text {
+  font-size: 14px;
+}
+
+/* ---------- PRODUCT CARDS ----------  */
 
 .products-container {
   padding-top: 50px;
@@ -231,10 +238,7 @@ ol {
   top: 12px;
 
   font-size: 12px;
-  font-weight: 400;
-  line-height: calc(15.31 / 12);
-
-  color: #fcf7e6;
+  color: var(--color-main-light);
   border-color: transparent;
 }
 
@@ -263,6 +267,10 @@ ol {
   margin: 0;
 }
 
+.card-price {
+  text-transform: uppercase;
+}
+
 .card-condition-wrap {
   text-align: right;
 }
@@ -271,10 +279,10 @@ ol {
   font-weight: 500;
 }
 
-/* PAGINATION */
+/* ---------- PAGINATION ----------  */
 
 .paginator-wrap {
-  padding-bottom: 196px;
+  padding-bottom: 204px;
 }
 
 .tui-pagination * {
@@ -299,8 +307,8 @@ ol {
   width: 39px;
   height: 39px;
 
-  color: #1e1e1e;
-  border: 1px solid black;
+  color: var(--color-pagination);
+  border: 1px solid var(--color-black);
   border-radius: 50%;
 
   text-align: center;
@@ -310,8 +318,8 @@ ol {
 }
 
 .tui-is-selected {
-  background-color: black;
-  color: white;
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
 
 .tui-pagination .tui-page-btn .tui-ico-first,
@@ -324,12 +332,12 @@ ol {
   visibility: hidden;
 }
 
-/* FOOTER */
+/* ---------- FOOTER ----------  */
 
 .footer {
-  padding: 48px 48px;
+  padding: 0 48px;
   padding-bottom: 192px;
-  border-top: 1px solid #000;
+  border-top: 1px solid var(--color-black);
 
   @media screen and (min-width: 1512px) {
     padding: 84px 120px;
@@ -355,17 +363,16 @@ ol {
   font-weight: 700;
 }
 
-/* SHOPPING CART DRAWER */
+/* ---------- SHOPPING CART DRAWER ---------- */
 
 .menu {
   width: 100%;
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 49px;
-  background-color: #1e1e1e;
+  background-color: var(--color-drawer);
 
-  color: #fcf7e6;
-  font-family: Space Grotesk, sans-serif;
+  color: var(--color-main-light);
   font-size: 14px;
   font-weight: 700;
   text-transform: capitalize;
@@ -410,7 +417,7 @@ ol {
   display: inline-block;
   width: 100%;
   height: 1px;
-  background-color: #fcf7e6;
+  background-color: var(--color-main-light);
 }
 
 .cart-list::after {
@@ -418,7 +425,7 @@ ol {
   display: inline-block;
   width: 100%;
   height: 1px;
-  background-color: #fcf7e6;
+  background-color: var(--color-main-light);
 }
 
 .cart-item-wrap {
@@ -429,7 +436,7 @@ ol {
 
 .cart-item-wrap:hover,
 .cart-item-wrap:focus {
-  color: #fcf7e6;
+  color: var(--color-main-light);
 }
 
 .cart-content-wrap {
@@ -444,8 +451,15 @@ ol {
 .cart-item-text-wrap {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
+}
+
+.cart-quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
 }
 
 .cart-total-wrap {

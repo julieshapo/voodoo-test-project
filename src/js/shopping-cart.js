@@ -8,7 +8,7 @@ const cartTotal = document.querySelector(".cart-total");
 
 let shoppingCart = [];
 
-// Save shopping cart items to localStorage
+// ---------- Save shopping cart items to localStorage ----------
 function saveToLocalStorage() {
   try {
     localStorage.setItem("ShoppingCartItems", JSON.stringify(shoppingCart));
@@ -17,7 +17,7 @@ function saveToLocalStorage() {
   }
 }
 
-// load shopping cart items from localStorage
+// ----------  load shopping cart items from localStorage ----------
 function loadFromLocalStorage() {
   try {
     const savedCart =
@@ -29,7 +29,7 @@ function loadFromLocalStorage() {
   }
 }
 
-// Create shopping cart markup
+// ----------  Create shopping cart markup ----------
 const shoppingCartMarkup = (shoppingCart) => {
   cartList.innerHTML = "";
 
@@ -75,7 +75,7 @@ const shoppingCartMarkup = (shoppingCart) => {
   cartTotal.textContent = `${totalPrice.toFixed(2)} KR.`;
 };
 
-// Decrement quantity
+// ----------  Decrement quantity ----------
 function decrementQuantity(item) {
   if (item.quantity > 1) {
     item.quantity -= 1;
@@ -84,19 +84,19 @@ function decrementQuantity(item) {
   }
 }
 
-// Increment quantity
+// ---------- Increment quantity ----------
 function incrementQuantity(item) {
   item.quantity += 1;
   shoppingCartMarkup(shoppingCart);
   saveToLocalStorage();
 }
 
-// Check is the product is already added to shopping cart
+// ---------- Check is the product is already added to shopping cart ----------
 function isItemInCart(productId) {
   return shoppingCart.some((item) => item.id === productId);
 }
 
-// Add product to shopping cart
+// ----------  Add product to shopping cart ----------
 export const onCartBtnClick = async (e) => {
   try {
     const products = await getAllProducts();
@@ -136,7 +136,7 @@ export const onCartBtnClick = async (e) => {
   }
 };
 
-// Remove product from shopping cart
+// ---------- Remove product from shopping cart ----------
 const removeFromShoppingCart = (productId) => {
   const indexToRemove = shoppingCart.findIndex((item) => item.id === productId);
 
@@ -152,7 +152,7 @@ const removeFromShoppingCart = (productId) => {
   }
 };
 
-// Close drawer with button
+// ---------- Close drawer with button ----------
 const shoppingCartCloseBtn = document.querySelector(".cart-btn-close");
 shoppingCartCloseBtn.addEventListener("click", () => {
   cartDrawer.checked = false;

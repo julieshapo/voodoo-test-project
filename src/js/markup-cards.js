@@ -19,18 +19,18 @@ const createProductsList = (array) => {
 };
 
 const createProductItem = ({ id, images, title, variants }) => {
-  return `<div class="card card-compact h-full bg-transparent product-card">
+  return `<div class="card card-compact  bg-transparent product-card">
       <figure class="border border-black rounded">
           <img src="${
             images[0]?.src ?? `${DEFAULT_IMG}`
           }" alt="${title}" width="100%" height="100%" class="product-img" />
       </figure>
-      <div class="badge uppercase bg-black text-white rounded p-3">used</div>
+      <div class="badge uppercase bg-black text-white rounded p-2">used</div>
       <div class="card-body ">
         <div class="card-description-wrap">  
           <div class="card-text-wrap">
             <h2 class="card-title">${title}</h2>
-            <p>${variants[0]?.price} KR.</p>
+            <p class="card-price">${variants[0]?.price} kr.</p>
           </div>
           <div class="card-condition-wrap">
             <p class="card-condition">Condition</p>
@@ -38,7 +38,7 @@ const createProductItem = ({ id, images, title, variants }) => {
           </div>
         </div>
           <div class="card-actions justify-end">
-              <button class="btn text-white bg-black rounded w-full add-cart-btn" data-id="${id}">Add to cart</button>
+              <button class="btn text-white bg-black hover:bg-slate-950 rounded w-full add-cart-btn" data-id="${id}">Add to cart</button>
           </div>
       </div>
   </div>`;
@@ -47,6 +47,7 @@ const createProductItem = ({ id, images, title, variants }) => {
 export const renderProducts = async (page) => {
   try {
     const products = await getAllProducts(page);
+    console.log(products);
     createProductsList(products);
   } catch (error) {
     return Notiflix.Notify.failure(
