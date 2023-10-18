@@ -222,6 +222,8 @@ ol {
 }
 
 .hidden-text-wrap {
+  border-radius: 4px;
+
   background-color: var(--color-black);
   color: var(--color-main-light);
 }
