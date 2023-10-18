@@ -152,16 +152,17 @@ ol {
 
 /* ---------- MAIN CONTENT ----------  */
 
-.collapse-arrow > .collapse-title:after {
-  width: 10px;
-  height: 10px;
-  right: 24px;
-}
-
-.collapse-title {
+/* ---------- BLACK DISCLOSURE ---------- */
+.showed-info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 24px;
-  padding: 24px;
 
+  padding: 24px;
+  border-radius: 4px;
+
+  background-color: var(--color-black);
   color: var(--color-main-light);
 
   @media screen and (min-width: 1512px) {
@@ -169,15 +170,33 @@ ol {
   }
 }
 
-.showed-text {
-  width: 142px;
-  height: 24px;
-  padding-top: 2px;
-  overflow: hidden;
+.showed-elements-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
 }
 
-.collapse-content {
-  color: var(--color-main-light);
+.showed-elements-wrap::after {
+  content: url(./src/images/chevron-down.svg);
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+
+.text-wrap {
+  display: flex;
+  gap: 24px;
+
+  @media screen and (min-width: 1512px) {
+    gap: 48px;
+  }
+}
+
+.alpha-wrap {
+  display: flex;
+  gap: 6px;
+  align-items: center;
 }
 
 .alpha-text {
@@ -189,8 +208,27 @@ ol {
   color: var(--color-main-light);
 }
 
+.showed-text {
+  height: 24px;
+  padding-top: 2px;
+
+  font-size: 14px;
+  font-weight: 500;
+  overflow: hidden;
+
+  @media screen and (min-width: 1512px) {
+    overflow: none;
+  }
+}
+
+.hidden-text-wrap {
+  background-color: var(--color-black);
+  color: var(--color-main-light);
+}
+
 .hidden-text {
   font-size: 14px;
+  padding: 24px;
 }
 
 /* ---------- PRODUCT CARDS ----------  */

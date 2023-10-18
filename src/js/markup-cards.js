@@ -47,7 +47,6 @@ const createProductItem = ({ id, images, title, variants }) => {
 export const renderProducts = async (page) => {
   try {
     const products = await getAllProducts(page);
-    console.log(products);
     createProductsList(products);
   } catch (error) {
     return Notiflix.Notify.failure(

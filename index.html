@@ -61,29 +61,38 @@
         <!-- Main content -->
         <main>
           <div class="main-container containerWrap">
-            <div
-              tabindex="0"
-              class="collapse collapse-arrow border rounded bg-black"
-            >
-              <div class="collapse-title text-sm font-medium flex items-center">
-                <div class="flex items-center gap-1.5">
-                  <svg class="icon" width="24" height="24">
-                    <use href="./src/images/sprite.svg#icon-alert-circle"></use>
-                  </svg>
+            <black-disclosure>
+              <div class="showed-info-wrapper">
+                <div class="showed-elements-wrap">
+                  <div class="text-wrap">
+                    <div class="alpha-wrap">
+                      <svg class="icon" width="24" height="24">
+                        <use
+                          href="./src/images/sprite.svg#icon-alert-circle"
+                        ></use>
+                      </svg>
 
-                  <p class="alpha-text">Alpha</p>
+                      <p class="alpha-text">Alpha</p>
+                    </div>
+                    <p class="showed-text">
+                      Important info regarding our service
+                    </p>
+                  </div>
                 </div>
-                <p class="showed-text">Important info regarding our service</p>
               </div>
-              <div class="collapse-content px-6">
+              <div class="hidden-text-wrap">
                 <p tabindex="0" class="hidden-text">
-                  Voodoo Ecom has been helping Ukrainians launch online
-                  businesses from scratch and increase income for already active
-                  online entrepreneurs for the past four years. We will help you
-                  too!
+                  Voodoo Ecom are from Lviv, Ukraine. Established in 2019 as a
+                  full-service Shopify agency, we’ve helped hundreds of
+                  aspirational brands exceed their goals thanks to our
+                  world-class ecommerce solutions. <br />
+                  From beautifully designed, intuitive Shopify stores and
+                  in-depth business audits, to data-driven marketing strategies
+                  and best-in-class applications, we help online businesses
+                  escape the ordinary and achieve ecommerce success.
                 </p>
               </div>
-            </div>
+            </black-disclosure>
           </div>
 
           <div class="main-container containerWrap products-container">
