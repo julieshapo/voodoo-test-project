@@ -10,14 +10,10 @@ class BlackDisclosure extends HTMLElement {
     showedInfoWrap.style.display = "block";
     hiddenTextWrap.style.display = "none";
 
-    showedInfoWrap.addEventListener("click", (e) => {
-      console.log(e.currentTarget);
-
-      if (hiddenTextWrap.style.display === "none") {
-        hiddenTextWrap.style.display = "block";
-      } else {
-        hiddenTextWrap.style.display = "none";
-      }
+    showedInfoWrap.addEventListener("click", () => {
+      hiddenTextWrap.style.display === "none"
+        ? (hiddenTextWrap.style.display = "block")
+        : (hiddenTextWrap.style.display = "none");
     });
   }
 }
